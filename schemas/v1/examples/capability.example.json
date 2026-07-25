@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "producer_version": "0.1.0",
+  "lane": "governance",
+  "host_id": "local-host-example",
+  "source_hashes": ["sha256:a33654b1a37a47a98349d3b36deabda4c675e2179209fdada94227b7ab4c8ec5"],
+  "matrix_version": "phase0-v1",
+  "default_decision": "deny",
+  "profiles": [
+    {
+      "caller": "governance-cli",
+      "source_surface": "cli",
+      "allowed_projects": ["governance"],
+      "credential_aliases": [],
+      "host_policy": "no-network-phase0",
+      "output_roots": ["state/governance/receipts/"],
+      "queue_targets": [],
+      "notification_routes": [],
+      "capabilities": ["status", "doctor"],
+      "operator": false,
+      "active": false
+    },
+    {
+      "caller": "business-a-cli",
+      "source_surface": "cli",
+      "allowed_projects": ["business-a"],
+      "credential_aliases": [],
+      "host_policy": "no-network-phase0",
+      "output_roots": ["state/business-a/receipts/"],
+      "queue_targets": [],
+      "notification_routes": [],
+      "capabilities": ["status", "doctor"],
+      "operator": false,
+      "active": false
+    },
+    {
+      "caller": "business-b-cli",
+      "source_surface": "cli",
+      "allowed_projects": ["business-b"],
+      "credential_aliases": [],
+      "host_policy": "no-network-phase0",
+      "output_roots": ["state/business-b/receipts/"],
+      "queue_targets": [],
+      "notification_routes": [],
+      "capabilities": ["status", "doctor"],
+      "operator": false,
+      "active": false
+    },
+    {
+      "caller": "personal-cli",
+      "source_surface": "cli",
+      "allowed_projects": ["personal"],
+      "credential_aliases": [],
+      "host_policy": "no-network-phase0",
+      "output_roots": ["state/personal/receipts/"],
+      "queue_targets": [],
+      "notification_routes": [],
+      "capabilities": ["status", "doctor"],
+      "operator": false,
+      "active": false
+    }
+  ]
+}

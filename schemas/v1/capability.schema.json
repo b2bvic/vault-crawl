@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.vault-crawl.local/v1/capability.schema.json",
+  "title": "Vault Crawl Server-Bound Capability Matrix v1",
+  "description": "Caller ceilings are selected by the server. Requests can only narrow them.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "producer_version", "lane", "host_id", "source_hashes", "matrix_version", "default_decision", "profiles"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "producer_version": { "type": "string", "minLength": 1 },
+    "lane": { "type": "string", "minLength": 1 },
+    "host_id": { "type": "string", "minLength": 1 },
+    "source_hashes": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 71 } },
+    "matrix_version": { "type": "string", "const": "phase0-v1" },
+    "default_decision": { "type": "string", "const": "deny" },
+    "profiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "caller",
+          "source_surface",
+          "allowed_projects",
+          "credential_aliases",
+          "host_policy",
+          "output_roots",
+          "queue_targets",
+          "notification_routes",
+          "capabilities",
+          "operator",
+          "active"
+        ],
+        "properties": {
+          "caller": { "type": "string", "minLength": 1 },
+          "source_surface": { "type": "string", "enum": ["cli", "scheduled-wrapper", "mcp-read-only"] },
+          "allowed_projects": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "credential_aliases": { "type": "array", "items": { "type": "string" } },
+          "host_policy": { "type": "string", "minLength": 1 },
+          "output_roots": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "queue_targets": { "type": "array", "items": { "type": "string" } },
+          "notification_routes": { "type": "array", "items": { "type": "string" } },
+          "capabilities": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["status", "doctor"] } },
+          "operator": { "type": "boolean" },
+          "active": { "type": "boolean", "const": false }
+        }
+      }
+    }
+  }
+}

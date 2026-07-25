@@ -1,0 +1,192 @@
+{
+  "version": "1.0.0",
+  "description": "Phase 0 pure-policy threat cases. No socket, HTTP request, browser, or external write occurs.",
+  "cases": [
+    {
+      "kind": "address-pinning",
+      "name": "single-public-address-is-pinned",
+      "resolved": ["::ffff:808:808"],
+      "selected": "::ffff:808:808",
+      "connected_peer": "::ffff:808:808",
+      "expected": "allowed"
+    },
+    {
+      "kind": "address-pinning",
+      "name": "empty-resolution-is-refused",
+      "resolved": [],
+      "selected": "::ffff:808:808",
+      "connected_peer": "::ffff:808:808",
+      "expected": "refused"
+    },
+    {
+      "kind": "address-pinning",
+      "name": "selected-address-not-in-resolution-is-refused",
+      "resolved": ["::ffff:808:808"],
+      "selected": "::ffff:101:101",
+      "connected_peer": "::ffff:101:101",
+      "expected": "refused"
+    },
+    {
+      "kind": "address-pinning",
+      "name": "rfc1918-is-refused",
+      "resolved": ["::ffff:a00:7"],
+      "selected": "::ffff:a00:7",
+      "connected_peer": "::ffff:a00:7",
+      "expected": "refused"
+    },
+    {
+      "kind": "address-pinning",
+      "name": "metadata-link-local-is-refused",
+      "resolved": ["::ffff:a9fe:a9fe"],
+      "selected": "::ffff:a9fe:a9fe",
+      "connected_peer": "::ffff:a9fe:a9fe",
+      "expected": "refused"
+    },
+    {
+      "kind": "address-pinning",
+      "name": "mixed-public-private-answer-is-refused",
+      "resolved": ["::ffff:101:101", "::ffff:c0a8:104"],
+      "selected": "::ffff:101:101",
+      "connected_peer": "::ffff:101:101",
+      "expected": "refused"
+    },
+    {
+      "kind": "address-pinning",
+      "name": "connected-peer-rebinding-is-refused",
+      "resolved": ["::ffff:808:808", "::ffff:101:101"],
+      "selected": "::ffff:808:808",
+      "connected_peer": "::ffff:101:101",
+      "expected": "refused"
+    },
+    {
+      "kind": "address-pinning",
+      "name": "ipv4-mapped-loopback-is-refused",
+      "resolved": ["::ffff:7f00:1"],
+      "selected": "::ffff:7f00:1",
+      "connected_peer": "::ffff:7f00:1",
+      "expected": "refused"
+    },
+    {
+      "kind": "address-pinning",
+      "name": "reserved-ipv4-future-use-is-refused",
+      "resolved": ["::ffff:f000:1"],
+      "selected": "::ffff:f000:1",
+      "connected_peer": "::ffff:f000:1",
+      "expected": "refused"
+    },
+    {
+      "kind": "address-pinning",
+      "name": "deprecated-ipv6-site-local-is-refused",
+      "resolved": ["fec0::1"],
+      "selected": "fec0::1",
+      "connected_peer": "fec0::1",
+      "expected": "refused"
+    },
+    {
+      "kind": "address-pinning",
+      "name": "reserved-ipv6-documentation-is-refused",
+      "resolved": ["2001:db8::1"],
+      "selected": "2001:db8::1",
+      "connected_peer": "2001:db8::1",
+      "expected": "refused"
+    },
+    {
+      "kind": "proxy",
+      "name": "ambient-https-proxy-is-refused",
+      "environment_keys": ["PATH", "HTTPS_PROXY"],
+      "expected": "refused"
+    },
+    {
+      "kind": "proxy",
+      "name": "ordinary-environment-is-allowed",
+      "environment_keys": ["PATH", "LANG"],
+      "expected": "allowed"
+    },
+    {
+      "kind": "path",
+      "name": "managed-receipt-child-is-allowed",
+      "root": "/tmp/vault-crawl/project-a",
+      "candidate": "/tmp/vault-crawl/project-a/receipts/run.json",
+      "expected": "allowed"
+    },
+    {
+      "kind": "path",
+      "name": "parent-traversal-is-refused",
+      "root": "/tmp/vault-crawl/project-a",
+      "candidate": "/tmp/vault-crawl/project-a/../project-b/receipt.json",
+      "expected": "refused"
+    },
+    {
+      "kind": "path",
+      "name": "sibling-project-path-is-refused",
+      "root": "/tmp/vault-crawl/project-a",
+      "candidate": "/tmp/vault-crawl/project-b/receipt.json",
+      "expected": "refused"
+    },
+    {
+      "kind": "authority",
+      "name": "server-bound-project-status-is-allowed",
+      "bound_caller": "project-a-cli",
+      "bound_surface": "cli",
+      "allowed_projects": ["project-a"],
+      "allowed_capabilities": ["status", "doctor"],
+      "requested_caller": "project-a-cli",
+      "requested_surface": "cli",
+      "requested_project": "project-a",
+      "requested_capabilities": ["status"],
+      "expected": "allowed"
+    },
+    {
+      "kind": "authority",
+      "name": "request-cannot-escalate-into-another-project",
+      "bound_caller": "project-a-cli",
+      "bound_surface": "cli",
+      "allowed_projects": ["project-a"],
+      "allowed_capabilities": ["status", "doctor"],
+      "requested_caller": "project-a-cli",
+      "requested_surface": "cli",
+      "requested_project": "project-b",
+      "requested_capabilities": ["status"],
+      "expected": "refused"
+    },
+    {
+      "kind": "authority",
+      "name": "request-cannot-add-fetch-capability",
+      "bound_caller": "project-a-cli",
+      "bound_surface": "cli",
+      "allowed_projects": ["project-a"],
+      "allowed_capabilities": ["status", "doctor"],
+      "requested_caller": "project-a-cli",
+      "requested_surface": "cli",
+      "requested_project": "project-a",
+      "requested_capabilities": ["status", "static-fetch"],
+      "expected": "refused"
+    },
+    {
+      "kind": "authority",
+      "name": "caller-identity-is-not-request-controlled",
+      "bound_caller": "project-a-cli",
+      "bound_surface": "cli",
+      "allowed_projects": ["project-a"],
+      "allowed_capabilities": ["status", "doctor"],
+      "requested_caller": "project-b-cli",
+      "requested_surface": "cli",
+      "requested_project": "project-a",
+      "requested_capabilities": ["status"],
+      "expected": "refused"
+    },
+    {
+      "kind": "authority",
+      "name": "scheduled-wrapper-cannot-select-another-project",
+      "bound_caller": "project-a-scheduler",
+      "bound_surface": "scheduled-wrapper",
+      "allowed_projects": ["project-a"],
+      "allowed_capabilities": ["status"],
+      "requested_caller": "project-a-scheduler",
+      "requested_surface": "scheduled-wrapper",
+      "requested_project": "project-b",
+      "requested_capabilities": ["status"],
+      "expected": "refused"
+    }
+  ]
+}

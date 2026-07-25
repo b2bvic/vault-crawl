@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.vault-crawl.local/v1/registry.schema.json",
+  "title": "Vault Crawl Source Registry Record v1",
+  "description": "Imported source records default inactive until independently validated.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "producer_version", "lane", "host_id", "source_hashes", "registry_type", "registry_version", "record_id", "source_path", "provenance", "execution_host", "adapter", "policy_profile", "active", "drift_state"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "producer_version": { "type": "string", "minLength": 1 },
+    "lane": { "type": "string", "minLength": 1 },
+    "host_id": { "type": "string", "minLength": 1 },
+    "source_hashes": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 71 } },
+    "registry_type": { "type": "string", "minLength": 1 },
+    "registry_version": { "type": "string", "minLength": 1 },
+    "record_id": { "type": "string", "minLength": 1 },
+    "source_path": { "type": "string", "minLength": 1 },
+    "provenance": { "type": "string", "minLength": 1 },
+    "approving_artifact": { "type": "string", "minLength": 1 },
+    "execution_host": { "type": "string", "minLength": 1 },
+    "adapter": { "type": "string", "minLength": 1 },
+    "source_native_cursor": { "type": "string", "minLength": 1 },
+    "source_url": { "type": "string", "minLength": 1 },
+    "policy_profile": { "type": "string", "minLength": 1 },
+    "active": { "type": "boolean", "const": false },
+    "drift_state": { "type": "string", "const": "unvalidated" }
+  }
+}

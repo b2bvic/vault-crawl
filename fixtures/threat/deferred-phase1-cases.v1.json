@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "implementation_status": "implemented-phase1",
+  "description": "Phase 1 transition cases bound to URL-policy, proxy-refusal, redirect, resolver, address-pinning, and peer-verification tests.",
+  "cases": [
+    { "name": "integer-ipv4-form", "boundary": "url-normalization", "example": "http://2130706433/" },
+    { "name": "shortened-ipv4-form", "boundary": "url-normalization", "example": "http://127.1/" },
+    { "name": "ipv6-zone-identifier", "boundary": "url-normalization", "example": "http://[fe80::1%25en0]/" },
+    { "name": "userinfo-host-confusion", "boundary": "url-normalization", "example": "http://public.example@[::1]/" },
+    { "name": "unsupported-scheme", "boundary": "url-normalization", "example": "file:///etc/passwd" },
+    { "name": "public-nonstandard-port-without-allowlist", "boundary": "url-policy", "example": "https://example.invalid:8443/" },
+    { "name": "platform-pac-proxy", "boundary": "platform-proxy-policy", "example": "system PAC selects proxy" },
+    { "name": "platform-static-proxy", "boundary": "platform-proxy-policy", "example": "system proxy configured outside environment" },
+    { "name": "public-to-private-redirect", "boundary": "redirect-transition", "example": "public URL redirects to IPv6 loopback" },
+    { "name": "redirect-dns-answer-change", "boundary": "redirect-transition", "example": "redirect host resolves public then private" },
+    { "name": "cross-origin-sensitive-header-strip", "boundary": "redirect-transition", "example": "authorization, cookie, referrer, and adapter headers" },
+    { "name": "redirect-loop", "boundary": "redirect-transition", "example": "A redirects to B redirects to A" },
+    { "name": "validation-to-connect-dns-rebinding", "boundary": "connection-transition", "example": "approved DNS answer changes before connect" }
+  ]
+}

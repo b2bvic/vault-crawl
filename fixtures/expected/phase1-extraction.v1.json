@@ -1,0 +1,72 @@
+{
+  "atom": {
+    "content_type": "application/atom+xml",
+    "document_sha256": "d3de8d4e72249400c1822b2090a2f4b81b1e802ebf41093f71dca30e16027c3f",
+    "file": "feed.atom",
+    "needs_render": false,
+    "parsed_sha256": "fcad8048d5a439d7ce4a0bfdbfacce6900bc4fe8931beff46659609b628b3c36",
+    "parser": "feed-rs",
+    "source_sha256": "12fc7694bbc2bd56bc3723a91934588457f293c5b0699d6b05e5ee68c962e04b",
+    "word_count": 2
+  },
+  "html": {
+    "content_type": "text/html; charset=utf-8",
+    "document_sha256": "08a9c37e130bd6f5a6c9be6eb9be00f6e800d91e6d3ad74601b31c886e262eba",
+    "file": "article.html",
+    "needs_render": false,
+    "parsed_sha256": "7985d561ff1f634009cbe046c30a3a5548f9a7bdd9072b3bcd225d887e700409",
+    "parser": "html",
+    "source_sha256": "a5e693f9ce4904ec63b74513f026347b2836e1881395824cdefed6317a70e417",
+    "word_count": 23
+  },
+  "json": {
+    "content_type": "application/json",
+    "document_sha256": "cd9f5d8c6343836a65b75cd56f9f31684073a3bb0935b3cd6cdd267bbbc8872d",
+    "file": "valid.json",
+    "needs_render": false,
+    "parsed_sha256": "78f8eee8b9573f4fe094ac547330190fddd51247282a2a8de7e923d092f17961",
+    "parser": "json",
+    "source_sha256": "05237ace5a5385b2b7d551e281efe4da14ce0e58587ab48acda9df9a44233dce",
+    "word_count": 16
+  },
+  "pdf": {
+    "content_type": "application/pdf",
+    "document_sha256": "3a28c757e21aae5ea440746132cafc247fad148ebb07bad48ebf7419c5ab602b",
+    "file": "text.pdf",
+    "needs_render": false,
+    "parsed_sha256": "1e6c3da94ddd20a94deaf8428e601fccb32f38f620ec46c33818583a66ccd0da",
+    "parser": "pdf-extract",
+    "source_sha256": "471fba22d296f13e3263defde31744742ac2a8f5452a9268258bd17be12e3be1",
+    "word_count": 5
+  },
+  "rss": {
+    "content_type": "application/rss+xml",
+    "document_sha256": "d3ab0e868b8e70ef76c4df1c07b5de98b3df8c044c9d4a75faf54181fe7b6b04",
+    "file": "feed.rss",
+    "needs_render": false,
+    "parsed_sha256": "bcb69c9125bb6f0e0f90a542f748d363687fc6ff49a4d350e101702aea45017c",
+    "parser": "feed-rs",
+    "source_sha256": "d3cbe77a7f0a2eee052c64c94a66df88feca01eeda86141cd83cef6693f90c0a",
+    "word_count": 2
+  },
+  "text": {
+    "content_type": "text/plain; charset=utf-8",
+    "document_sha256": "0f09f9d3e3635c7a2ae469bd98f47724fbd574af6c910c59ec89f5d74c3223f3",
+    "file": "robots.txt",
+    "needs_render": false,
+    "parsed_sha256": "d7b9c980bf16e37995dc00308568d5c6ccda64dbd03b1cecdd8eb9e3c89b7e72",
+    "parser": "plain-text",
+    "source_sha256": "d7b9c980bf16e37995dc00308568d5c6ccda64dbd03b1cecdd8eb9e3c89b7e72",
+    "word_count": 8
+  },
+  "xml": {
+    "content_type": "application/xml",
+    "document_sha256": "420203f12e0e5482e76580480906da14e94d515d38d5e970109bf05987d4778a",
+    "file": "sitemap.xml",
+    "needs_render": false,
+    "parsed_sha256": "e8d68bfeacef84ddb19b606443183b675e68560a0e129d28deab652b28497a0f",
+    "parser": "xml",
+    "source_sha256": "cc419231680cd6a7b9f7069dc3fb26dbd8afb68490a5cdcd709b80d1f1d67f24",
+    "word_count": 3
+  }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>Fixture RSS</title><link>https://fixture.invalid/</link>
+<item><guid>fixture-rss-1</guid><title>First item</title><link>https://fixture.invalid/article</link><pubDate>Mon, 20 Jul 2026 12:00:00 GMT</pubDate><category domain="https://fixture.invalid/taxonomy">Evidence</category><enclosure url="https://fixture.invalid/audio.mp3" length="1234" type="audio/mpeg" /></item>
+</channel></rss>

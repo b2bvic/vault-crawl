@@ -1,0 +1,22 @@
+{
+  "example_only": true,
+  "description": "Example 3+1 project layout. Replace these identifiers with any validated project set.",
+  "projects": [
+    {
+      "id": "governance",
+      "role": "shared-system"
+    },
+    {
+      "id": "business-a",
+      "role": "business"
+    },
+    {
+      "id": "business-b",
+      "role": "business"
+    },
+    {
+      "id": "personal",
+      "role": "personal"
+    }
+  ]
+}

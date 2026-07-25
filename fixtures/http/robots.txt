@@ -1,0 +1,4 @@
+User-agent: VaultCrawl
+Disallow: /private
+Allow: /
+Crawl-delay: 0.01

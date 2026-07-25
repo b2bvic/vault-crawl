@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Fixture Atom</title><id>urn:fixture:feed</id><link rel="next" href="https://fixture.invalid/feed?page=2" />
+<updated>2026-07-20T12:00:00Z</updated><entry><title>Atom item</title><id>urn:fixture:item:1</id>
+<updated>2026-07-20T12:00:00Z</updated><link href="https://fixture.invalid/article"/><category term="Evidence" scheme="https://fixture.invalid/taxonomy" /><link rel="enclosure" href="https://fixture.invalid/brief.pdf" type="application/pdf" length="4321" /></entry></feed>

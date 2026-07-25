@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "producer_version": "0.1.0",
+  "lane": "governance",
+  "host_id": "local-host-example",
+  "source_hashes": ["sha256:a33654b1a37a47a98349d3b36deabda4c675e2179209fdada94227b7ab4c8ec5"],
+  "policy_id": "phase0-default-deny",
+  "implementation_status": "schema-only",
+  "allowed_schemes": ["http", "https"],
+  "default_methods": ["GET", "HEAD"],
+  "automatic_ports": [80, 443],
+  "proxy_support": false,
+  "tls_verification": true,
+  "robots_default": "fail-closed",
+  "activation_state": "disabled"
+}

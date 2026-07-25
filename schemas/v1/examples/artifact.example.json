@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "producer_version": "0.1.0",
+  "artifact_id": "artifact-phase0-example",
+  "lane": "governance",
+  "host_id": "local-host-example",
+  "source_hashes": ["sha256:a33654b1a37a47a98349d3b36deabda4c675e2179209fdada94227b7ab4c8ec5"],
+  "intake_event_id": "intake-example-001",
+  "source": {
+    "original_url": "https://example.invalid/fixture",
+    "captured_at_utc": "2026-07-20T00:00:00Z",
+    "availability_state": "hash-known"
+  },
+  "trust": "untrusted-evidence",
+  "implementation_status": "schema-only"
+}

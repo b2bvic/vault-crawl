@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "producer_version": "0.1.0",
+  "lane": "business-a",
+  "host_id": "local-host-example",
+  "source_hashes": ["sha256:a33654b1a37a47a98349d3b36deabda4c675e2179209fdada94227b7ab4c8ec5"],
+  "registry_type": "source-catalog",
+  "registry_version": "phase0-v1",
+  "record_id": "registry-example-source",
+  "source_path": "config/registries/sources.json",
+  "provenance": "phase0-fixture-only",
+  "approving_artifact": "none-phase0",
+  "execution_host": "local-host-example",
+  "adapter": "generic-http",
+  "source_native_cursor": "fixture-cursor",
+  "source_url": "https://example.invalid/source",
+  "policy_profile": "phase0-default-deny",
+  "active": false,
+  "drift_state": "unvalidated"
+}

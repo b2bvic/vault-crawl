@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.vault-crawl.local/v1/artifact.schema.json",
+  "title": "Vault Crawl Artifact v1",
+  "description": "Normalized evidence envelope. Downloaded content is always untrusted data.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "producer_version", "artifact_id", "lane", "host_id", "source_hashes", "source", "trust", "implementation_status"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "producer_version": { "type": "string", "minLength": 1 },
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "lane": { "type": "string", "minLength": 1 },
+    "host_id": { "type": "string", "minLength": 1 },
+    "source_hashes": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 71 } },
+    "intake_event_id": { "type": "string", "minLength": 1 },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["original_url", "captured_at_utc", "availability_state"],
+      "properties": {
+        "original_url": { "type": "string", "minLength": 1 },
+        "captured_at_utc": { "type": "string", "minLength": 1 },
+        "availability_state": { "type": "string", "enum": ["hash-known", "available-local", "exported", "evicted-under-policy", "missing"] }
+      }
+    },
+    "trust": { "type": "string", "const": "untrusted-evidence" },
+    "implementation_status": { "type": "string", "const": "schema-only" }
+  }
+}

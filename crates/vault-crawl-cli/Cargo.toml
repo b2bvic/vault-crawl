@@ -1,0 +1,22 @@
+[package]
+name = "vault-crawl-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "vault-crawl"
+path = "src/main.rs"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+url.workspace = true
+uuid.workspace = true
+vault-crawl-core.workspace = true
+vault-crawl-fixtures.workspace = true
+
+[lints]
+workspace = true

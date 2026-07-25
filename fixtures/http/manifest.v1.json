@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "phase_claim": "phase1-golden-corpus",
+  "description": "Offline golden inputs used by the Phase 1 extraction and retrieval proof suite.",
+  "routes": [
+    { "path": "/article", "status": 200, "content_type": "text/html; charset=utf-8", "file": "article.html", "body_sha256": "a5e693f9ce4904ec63b74513f026347b2836e1881395824cdefed6317a70e417", "headers": { "ETag": "\"fixture-article-v1\"" } },
+    { "path": "/navigation-heavy", "status": 200, "content_type": "text/html; charset=utf-8", "file": "navigation-heavy.html", "body_sha256": "b1b9471703087e422e5e480b56b6abf7cd0f04cf4431d4d5444b1125ffc7059b" },
+    { "path": "/malformed", "status": 200, "content_type": "text/html; charset=utf-8", "file": "malformed.html", "body_sha256": "fb02d4221a926519c38adfe8e41f90675a3d3dc36b16186535e4a0be5b3a7a96" },
+    { "path": "/jsonld-article", "status": 200, "content_type": "text/html; charset=utf-8", "file": "jsonld-article.html", "body_sha256": "a9dd29bed624560281b5414102c57267b26dc30527dc69c2766c7ae13c96bc9a" },
+    { "path": "/table", "status": 200, "content_type": "text/html; charset=utf-8", "file": "table.html", "body_sha256": "e3038f61a49a94fb4c2a16d573e643adcbbfe722092e09963537bdb6d96b39ce" },
+    { "path": "/duplicate-headings", "status": 200, "content_type": "text/html; charset=utf-8", "file": "duplicate-headings.html", "body_sha256": "25b88ac144ff841bc714201c3c76e86ce7c7e59abeba7f50e141514fbff0c323" },
+    { "path": "/non-english", "status": 200, "content_type": "text/html; charset=utf-8", "file": "non-english.html", "body_sha256": "3409fed10d9b431d20d7db620c798df40af5f988abe6694e34df7ba650e871b5" },
+    { "path": "/charset-conflict", "status": 200, "content_type": "text/html; charset=iso-8859-1", "file": "charset-conflict.html", "body_sha256": "94d7ef8d8d4f4ba0a9e11c80fa727671a62fd2d976b7be52d0073bc7ee45c5f0" },
+    { "path": "/prompt-injection", "status": 200, "content_type": "text/html; charset=utf-8", "file": "prompt-injection.html", "body_sha256": "5c245671537a503d3c4c92f69af59a6cb7e4d825509467285892bf6dcff6e8ed" },
+    { "path": "/js-shell", "status": 200, "content_type": "text/html; charset=utf-8", "file": "js-shell.html", "body_sha256": "6a9a2a2e4cde2a042252702d2c94eee5477a7dbd414191f422dedb93196964f9" },
+    { "path": "/feed.rss", "status": 200, "content_type": "application/rss+xml", "file": "feed.rss", "body_sha256": "d3cbe77a7f0a2eee052c64c94a66df88feca01eeda86141cd83cef6693f90c0a" },
+    { "path": "/feed.atom", "status": 200, "content_type": "application/atom+xml", "file": "feed.atom", "body_sha256": "12fc7694bbc2bd56bc3723a91934588457f293c5b0699d6b05e5ee68c962e04b" },
+    { "path": "/sitemap.xml", "status": 200, "content_type": "application/xml", "file": "sitemap.xml", "body_sha256": "cc419231680cd6a7b9f7069dc3fb26dbd8afb68490a5cdcd709b80d1f1d67f24" },
+    { "path": "/valid.json", "status": 200, "content_type": "application/json", "file": "valid.json", "body_sha256": "05237ace5a5385b2b7d551e281efe4da14ce0e58587ab48acda9df9a44233dce" },
+    { "path": "/text.pdf", "status": 200, "content_type": "application/pdf", "file": "text.pdf", "body_sha256": "471fba22d296f13e3263defde31744742ac2a8f5452a9268258bd17be12e3be1" },
+    { "path": "/malformed.json", "status": 200, "content_type": "application/json", "file": "malformed.json", "body_sha256": "964a6d718ef7836bfbe20c613c37cbcb340eb248c54c702087eda7043730f3d8" },
+    { "path": "/robots.txt", "status": 200, "content_type": "text/plain", "file": "robots.txt", "body_sha256": "d7b9c980bf16e37995dc00308568d5c6ccda64dbd03b1cecdd8eb9e3c89b7e72" },
+    { "path": "/redirect-private", "status": 302, "content_type": "text/plain", "file": null, "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "headers": { "Location": "http://[::1]/private" } },
+    { "path": "/redirect-article", "status": 302, "content_type": "text/plain", "file": "redirect.txt", "body_sha256": "cad2317a776bad117cdc5ce2e0afa231d0ecdd87de14f079392f6d285ba4939e", "headers": { "Location": "/article" } },
+    { "path": "/server-error", "status": 500, "content_type": "text/plain", "file": "server-error.txt", "body_sha256": "0a6084e8e05573116a08d76818ace77133eafa127fcaf3b8d6b59918dcd3c6c3" }
+  ]
+}
