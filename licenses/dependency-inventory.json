@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "generated_from": "Cargo.lock + cargo metadata --locked",
-  "cargo_lock_sha256": "caf3285cd9411c2ec70ee781667fcf0f996d7467dd90594879a0b3ed631020c7",
-  "reviewed_at_utc": "2026-07-20T20:10:00Z",
+  "cargo_lock_sha256": "3eafc54a80a214f7e7a2503b75308b69e0c89134aaec2e1cd4d6663c22618159",
+  "reviewed_at_utc": "2026-10-05T21:12:51Z",
   "firecrawl_source_copied": false,
   "agpl_code_present": false,
   "policy": "Every resolved package must declare a license. Cargo.lock is the version authority.",
@@ -93,13 +93,13 @@
     },
     {
       "name": "aws-lc-rs",
-      "version": "1.17.3",
+      "version": "1.18.1",
       "license": "ISC AND (Apache-2.0 OR ISC)",
       "source": "crates.io"
     },
     {
       "name": "aws-lc-sys",
-      "version": "0.43.0",
+      "version": "0.45.0",
       "license": "ISC AND (Apache-2.0 OR ISC) AND Apache-2.0 AND MIT AND BSD-3-Clause AND (Apache-2.0 OR ISC OR MIT) AND (Apache-2.0 OR ISC OR MIT-0)",
       "source": "crates.io"
     },
@@ -1113,7 +1113,7 @@
     },
     {
       "name": "rustls",
-      "version": "0.23.42",
+      "version": "0.23.45",
       "license": "Apache-2.0 OR ISC OR MIT",
       "source": "crates.io"
     },
@@ -1143,7 +1143,7 @@
     },
     {
       "name": "rustls-webpki",
-      "version": "0.103.13",
+      "version": "0.103.15",
       "license": "ISC",
       "source": "crates.io"
     },

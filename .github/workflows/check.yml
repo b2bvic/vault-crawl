@@ -1,0 +1,23 @@
+name: Check
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install declared Rust version
+        run: rustup toolchain install 1.94.1 --profile minimal --component rustfmt --component clippy && rustup default 1.94.1
+      - name: Format
+        run: cargo fmt --check
+      - name: Lint
+        run: cargo clippy --locked --all-targets --all-features -- -D warnings
+      - name: Test
+        run: cargo test --locked --all
+      - name: Install shell lint tool
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Check isolated demo
+        run: bash -n examples/demo.sh && shellcheck examples/demo.sh && bash examples/demo.sh

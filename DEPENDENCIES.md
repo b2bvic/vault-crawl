@@ -1,6 +1,6 @@
 # Dependency and license decision
 
-Phase 0 has five direct third-party dependencies:
+The historical Phase 0 contract had five direct third-party dependencies:
 
 | Package | Version | Purpose | License | Decision |
 |---|---:|---|---|---|
@@ -19,3 +19,20 @@ missing, blank, unknown, or AGPL license declarations.
 The reviewed inventory records `firecrawl_source_copied=false` and
 `agpl_code_present=false`; no locked dependency declares AGPL. This proof is a
 dependency and repository review claim, not a general provenance theorem.
+
+## Security scan, 2026.10.05
+
+Rustls is locked at 0.23.45 to address [RUSTSEC-2026-0285](https://rustsec.org/advisories/RUSTSEC-2026-0285.html).
+The lock update also changes its cryptography and certificate-validation dependencies.
+The license inventory covers the resulting lockfile.
+
+The PDF extraction chain includes `ttf-parser` 0.25.1 through `lopdf` and `pdf-extract`.
+[RUSTSEC-2026-0192](https://rustsec.org/advisories/RUSTSEC-2026-0192.html) marks that parser as unmaintained.
+The advisory provides no patched version.
+Replacing the PDF parser requires a separate compatibility review.
+
+An OSV query checked all 305 locked crates.io package versions after the update.
+It returned the font-parser maintenance advisory and no other matching advisory.
+This result describes that scan, not a guarantee against undisclosed defects.
+
+The [saved scan receipt](docs/security-scan-2026.10.05.json) records the lock hash and API response.
